@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo list</title>
+  </head>
+  <body>
+    <p>Todo List Pracrice 1</p>
+    <input type="text" class="todo" placeholder="Todo name" />
+    <button
+      onclick="
+      addTodo();
+    "
+    >
+      Add
+    </button>
+    <div class="arr"></div>
+    <script>
+      // let myarray2 = ["make dinner", "code", "do Project"];
+      // const myarray3 = [2, 5, 7];
+      // let sum = 0;
+      const arrr = document.querySelector(".arr");
+
+      // for (let index = 0; index < myarray2.length; index++) {
+      //   const value = myarray2[index];
+      //   console.log(value);
+      // }
+      // for (let i = 0; i < myarray3.length; i++) {
+      //   sum += myarray3[i];
+      // }
+      //console.log(sum);
+      const myarray = [];
+      let value = "";
+      addTodo();
+      function addTodo() {
+        const toDoName = document.querySelector(".todo").value;
+        myarray.push(toDoName);
+
+        rendertodo();
+        value = "";
+      }
+
+      function rendertodo() {
+        for (let i = 0; i < myarray.length; i++) {
+          value += `<p>${myarray[i]}</p>`;
+        }
+        // console.log(value);
+        arrr.innerHTML = value;
+      }
+    </script>
+  </body>
+</html>
